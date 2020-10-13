@@ -15,6 +15,6 @@ for line in sys.stdin:
         pass
 
 
-sorted_dict_ip_count = sorted(dict_ip_count.items(), key=itemgetter(0))
+sorted_dict_ip_count = sorted(dict_ip_count.items(), key=itemgetter(0),reverse=True)
 for ip, count in sorted_dict_ip_count[:2]:
     print '%s\t%s' % (ip, count)
