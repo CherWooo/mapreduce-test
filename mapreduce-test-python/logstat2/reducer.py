@@ -15,6 +15,6 @@ for line in sys.stdin:
         pass
 
 
-sorted_dict_ip_count = sorted(dict_ip_count.items(), key=itemgetter(0),reverse=True)
+sorted_dict_ip_count = sorted(dict_ip_count.items(), key=lambda x:x["count"])
 for ip, count in sorted_dict_ip_count:
     print '%s\t%s' % (ip, count)
