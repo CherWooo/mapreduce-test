@@ -15,6 +15,7 @@ for line in sys.stdin:
         pass
 
 dict_hour_ip_count = {}
+
 for hour_ip, count in dict_ip_count.items():
         hour = hour_ip[1:6]
         ip = hour_ip[7:]
@@ -28,9 +29,7 @@ for hour_ip, count in dict_ip_count.items():
             dict_hour_ip_count[hour].append((ip, count))
 
 for hour, ip_count in dict_hour_ip_count.items():
-    print("The hour is", hour)
-    #print("The ipcount is", ipcount)
     top_3_ip = sorted(list(ip_count), key = lambda x:x[1], reverse=True)[0:3]
-    print("top 3 ip", top_3_ip)
+    print(hour,"top 3 ip", top_3_ip)
     for ip, count in top_3_ip:
         print ('%s\t%s' % ('['+hour+']' +ip, count))
