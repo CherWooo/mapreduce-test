@@ -27,6 +27,10 @@ for hour_ip, count in dict_ip_count.items():
             dict_hour_ip_count[hour] = [(ip,count)]
         else:
             dict_hour_ip_count[hour].append((ip, count))
+            
+for hour, ip_count in dict_hour_ip_count.items():
+    top_3_ip = sorted(list(ip_count), key = lambda x:x[1], reverse=True)[0:3]
+    print(hour,"top 3 ip", top_3_ip)
 
 for hour,ip_count in dict_hour_ip_count.items():
     a = input('please enter a number: ')
