@@ -28,6 +28,11 @@ for hour_ip, count in dict_ip_count.items():
         else:
             dict_hour_ip_count[hour].append((ip, count))
 
-for hour, ip_count in dict_hour_ip_count.items():
-    top_3_ip = sorted(list(ip_count), key = lambda x:x[1], reverse=True)[0:3]
-    print(hour,"top 3 ip", top_3_ip)
+for hour,ip_count in dict_hour_ip_count.items():
+    a = input('please enter a number: ')
+    if a+':00' not in dict_hour_ip_count.keys():
+        print('not found')
+    else:
+        top_3_ip = sorted(dict_hour_ip_count[a+':00'], key = lambda x:x[1], reverse=True)[0:3]
+        print(a+':00',top_3_ip)
+        break
